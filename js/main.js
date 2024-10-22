@@ -6,11 +6,21 @@ const taskCard = document.querySelector(".todoCard");
 // Sélectionne le conteneur où les cartes de tâches seront ajoutées
 const taskContainer = document.querySelector("#todoCards");
 
-// Sélectionne le bouton de suppression en utilisant son ID (l'icone poubelle)
+// Sélectionne le bouton de suppression en utilisant son ID (l'icone poubelle) -> partie 2
 const delBtn = document.querySelector('.delBtn');
 
+// Sélectionne le compteur en utilisant son ID (<div id="count"></div>) -> partie 3
+const counterDisplay = document.querySelector("#count");
 
-// on ajoute un écouteur d'évènement sur le bouton pour appeler une fonction ajout
+
+// Initialise le compteur à 1 (il y a une card existante à l'affichage de la page)
+let count = 1;
+
+
+
+
+
+// On ajoute un écouteur d'évènement sur le bouton pour appeler une fonction ajout
 
 // Ajoute une tâche lorsque le bouton est cliqué (add a task on click)
 addBtn.addEventListener('click', addTask);
@@ -36,14 +46,19 @@ function addTask() {
     newDelBtn.addEventListener('click', function() {
         deleteTask(newTask);
     });
+    count = count +1;
+    counterDisplay.textContent = count;
 
     // Ajoute la nouvelle tâche au conteneur des tâches
     taskContainer.appendChild(newTask) // append new task to the tasks container
-    
 }
 
 // fonction pour supprimer une tâche
 function deleteTask (task) {
     task.remove (); // remove the task
+    count = count - 1;
+    counterDisplay.textContent = count;
 }
+
+
 
