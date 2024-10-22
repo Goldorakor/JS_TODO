@@ -6,7 +6,7 @@ const taskCard = document.querySelector(".todoCard");
 // Sélectionne le conteneur où les cartes de tâches seront ajoutées
 const taskContainer = document.querySelector("#todoCards");
 
-// Sélectionne le bouton de suppression en utilisant son ID (l'icone poubelle) -> partie 2
+// Sélectionne le bouton de suppression en utilisant sa classe (l'icone poubelle) -> partie 2
 const delBtn = document.querySelector('.delBtn');
 
 // Sélectionne le compteur en utilisant son ID (<div id="count"></div>) -> partie 3
